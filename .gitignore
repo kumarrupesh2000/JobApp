@@ -1,0 +1,15 @@
+# Node/React
+JobApp-Frontend/node_modules/
+JobApp-Frontend/build/
+JobApp-Frontend/.env
+
+# Java/Maven
+JobApp-BackEnd/demo/target/
+JobApp-BackEnd/.env
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
