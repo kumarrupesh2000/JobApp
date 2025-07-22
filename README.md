@@ -2,6 +2,11 @@
 
 This repository contains both the backend and frontend for a Job Application management system.
 
+
+## UI Screenshot
+
+![Job Application UI](./assets/image.png)
+
 ## Project Structure
 
 ```
