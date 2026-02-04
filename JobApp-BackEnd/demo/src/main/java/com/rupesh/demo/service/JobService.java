@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 import com.rupesh.demo.model.Jobs;
 import com.rupesh.demo.repo.JobRepo;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Component
 public class JobService {
 
@@ -26,7 +28,8 @@ public class JobService {
 
 
     public Jobs getJobById(int jobId) {
-        return repo.findById(jobId).orElse(null);
+        return repo.findById(jobId)
+               .orElseThrow(() -> new EntityNotFoundException("Job not found"));
     }
 
 
