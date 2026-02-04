@@ -21,6 +21,8 @@ public class JobService {
 
 
     public void addJob(Jobs job) {
+
+        // to add job
         repo.save(job);
     }
 
