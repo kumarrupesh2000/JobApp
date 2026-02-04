@@ -19,8 +19,9 @@ public class JobService {
         return repo.findAll();
     }
 
-
+    
     public void addJob(Jobs job) {
+        // adding a job
         repo.save(job);
     }
 
