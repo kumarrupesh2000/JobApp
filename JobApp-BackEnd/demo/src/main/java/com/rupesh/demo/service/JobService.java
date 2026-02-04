@@ -23,12 +23,14 @@ public class JobService {
 
 
     public void addJob(Jobs job) {
+
+        // to add job
         repo.save(job);
     }
 
 
     public Jobs getJobById(int jobId) {
-        return repo.findById(jobId)
+       return repo.findById(jobId)
                .orElseThrow(() -> new EntityNotFoundException("Job not found"));
     }
 
