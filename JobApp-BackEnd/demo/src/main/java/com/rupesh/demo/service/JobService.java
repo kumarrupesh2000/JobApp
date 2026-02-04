@@ -36,7 +36,10 @@ public class JobService {
 
 
     public void deleteJob(int jobId) {
-        repo.deleteById(jobId);
+        // repo.deleteById(jobId);
+        if(jobId!=0){
+            repo.deleteById(jobId);
+        }
     }
 
     public void loadJob(){
