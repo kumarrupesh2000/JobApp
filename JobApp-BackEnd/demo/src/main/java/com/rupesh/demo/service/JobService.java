@@ -28,13 +28,7 @@ public class JobService {
 
 
     public Jobs getJobById(int jobId) {
-        Optional<Jobs>jobs=repo.findById(jobId);
-        if(jobs!=null){
-            return jobs.get();
-        }
-        else{
-            return null;
-        }
+       return repo.findById(jobId).orElse(null);
     }
 
 
