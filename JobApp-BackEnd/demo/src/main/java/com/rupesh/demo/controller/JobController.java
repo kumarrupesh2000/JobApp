@@ -26,7 +26,8 @@ public class JobController {
     private JobService service;
     @GetMapping("/")
     public String home(){
-        return "Welcome to Job Application";
+        System.out.println("welome");
+        return "Welcome to Job Portal";
     }
 
     @GetMapping("/jobs")
@@ -38,7 +39,7 @@ public class JobController {
     @GetMapping("/load")
     public String loadJobs(){
         service.loadJob();
-        return "Jobs loaded successfully";
+        return "Jobs loaded ";
     }
 
     // Will work for
