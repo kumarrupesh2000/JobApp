@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import com.rupesh.demo.model.Jobs;
 import com.rupesh.demo.repo.JobRepo;
 
+import jakarta.persistence.EntityNotFoundException;
+
 @Component
 public class JobService {
 
@@ -22,12 +24,16 @@ public class JobService {
 
     
     public void addJob(Jobs job) {
+
+        // to add job
         // adding a job
         repo.save(job);
     }
 
 
     public Jobs getJobById(int jobId) {
+       return repo.findById(jobId)
+               .orElseThrow(() -> new EntityNotFoundException("Job not found"));
         Optional<Jobs>jobs=repo.findById(jobId);
         if(jobs!=null){
             return jobs.get();
@@ -39,7 +45,10 @@ public class JobService {
 
 
     public void deleteJob(int jobId) {
-        repo.deleteById(jobId);
+        // repo.deleteById(jobId);
+        if(jobId!=0){
+            repo.deleteById(jobId);
+        }
     }
 
     public void loadJob(){

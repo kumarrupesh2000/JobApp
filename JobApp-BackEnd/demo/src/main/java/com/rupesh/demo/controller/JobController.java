@@ -26,6 +26,7 @@ public class JobController {
     private JobService service;
     @GetMapping("/")
     public String home(){
+        //comment added
         System.out.println("welcome");
         return "Welcome to Job Application";
 
