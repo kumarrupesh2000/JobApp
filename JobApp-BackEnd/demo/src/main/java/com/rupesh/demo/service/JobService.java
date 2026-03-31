@@ -3,6 +3,7 @@ package com.rupesh.demo.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -21,10 +22,11 @@ public class JobService {
         return repo.findAll();
     }
 
-
+    
     public void addJob(Jobs job) {
 
         // to add job
+        // adding a job
         repo.save(job);
     }
 
@@ -32,6 +34,13 @@ public class JobService {
     public Jobs getJobById(int jobId) {
        return repo.findById(jobId)
                .orElseThrow(() -> new EntityNotFoundException("Job not found"));
+        Optional<Jobs>jobs=repo.findById(jobId);
+        if(jobs!=null){
+            return jobs.get();
+        }
+        else{
+            return null;
+        }
     }
 
 
