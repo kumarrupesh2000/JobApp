@@ -28,7 +28,9 @@ public class JobService {
 
 
     public Jobs getJobById(int jobId) {
+        System.out.println("job id");
        return repo.findById(jobId).orElse(null);
+       
     }
 
 

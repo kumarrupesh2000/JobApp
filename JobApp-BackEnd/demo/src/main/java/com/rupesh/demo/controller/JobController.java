@@ -26,6 +26,7 @@ public class JobController {
     private JobService service;
     @GetMapping("/")
     public String home(){
+        System.out.println("welome");
         return "Welcome to Job Portal";
     }
 
