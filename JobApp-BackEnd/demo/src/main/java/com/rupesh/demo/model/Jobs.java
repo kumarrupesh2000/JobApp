@@ -72,6 +72,7 @@ public class Jobs {
     }
 
     public List<String> getSkills() {
+        System.out.println("deeps");
         return skills;
     }
 
